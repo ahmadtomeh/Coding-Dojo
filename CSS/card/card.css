@@ -1,0 +1,40 @@
+
+main{
+    width: 1000px;
+    height: 472px;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #cccccc ;
+}
+
+header{
+    height: 140px;
+    background-color: #17a2b8;
+    margin-bottom: 60px;
+    border: 2px solid #17a2b8 ;
+}
+
+#user-circle{
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 80px;
+    left: 30px;
+}
+
+.profile-icons{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.profile-icons2{
+    height: 30px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+
+.align-right{
+    margin-left: 30px;
+}
