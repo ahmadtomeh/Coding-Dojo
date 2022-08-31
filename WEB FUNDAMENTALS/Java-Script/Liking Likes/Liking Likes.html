@@ -5,21 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liking Likes</title>
+    <link rel="stylesheet" href="Liking Likes.css">
 </head>
 <body>
-    <nav></nav>
+    <nav><h1 style="color: white;" class="nav-text">Network</h1></nav>
+    <header style="text-align:center;"><h1>Your Feed</h1></header>
     <main>
         <section>
             <figure>
-
+                <img src="user-circle.png" alt="user-circle" style="height: 100px; width: 100px; margin-top: 15px;">
+                <a href="#" style="display: block; font-size: 15pt;margin: 10px;">Add an avatar</a>
+                <p style="font-size: 25pt; margin-top: 10px;">james doe</p>
             </figure>
         </section>
-        <aside>
-            <div><p>Your Feed</p></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <aside style="margin: 0 0 0 0; align-items: start;">
+            <div class="box1">
+                <div class="fl">
+                    <p style="font-weight: bold; font-size: xx-large;">Neil M</p>
+                    <p class="L1" style="margin: 5px 0 0 140px; font-weight: bold; font-size: large;">9 like(s)</p>
+                    <button onclick="addLike1()" style="font-weight: bold;">Like </button>
+                </div>
+                <div>
+                    <p style="font-size: x-large; text-align: start;"> I just set up this new discord bot, let me<br>know what you all think. <a href="#">link</a></p>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="fl">
+                    <p style="font-weight: bold; font-size: xx-large;">Nichole K</p>
+                    <p class="L2" style="margin: 5px 0 0 100px; font-weight: bold; font-size: large;">12 like(s)</p>
+                    <button onclick="addLike2()" style="font-weight: bold;">Like </button>
+                </div>
+                <div>
+                    <p style="font-size: x-large; text-align: start;">Just finished my next comic check it out. </p>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="fl">
+                    <p style="font-weight: bold; font-size: xx-large;">Jim R</p>
+                    <p class="L3" style="margin: 5px 0 0 140px; font-weight: bold; font-size: large;">9 like(s)</p>
+                    <button onclick="addLike3()" style="font-weight: bold;" class="b1">Like </button>
+                </div>
+                <div>
+                    <p style="font-size: x-large; text-align: start;">I can't stop listening to the new album.<br>Who else is liking it?</p>
+                </div>
+            </div>
         </aside>
     </main>
+    <script src="Liking Likes.js"></script>
 </body>
 </html>
