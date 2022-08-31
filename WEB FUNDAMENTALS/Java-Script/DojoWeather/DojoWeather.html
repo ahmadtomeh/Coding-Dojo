@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="DojoWeather.css">
+</head>
+
+<body>
+    <nav>
+        <p style="font-size: 30pt; font-weight: bold;">DojoWeather</p>
+        <ul class="ul1">
+            <li>
+                <p onclick="alert('Loading weather report...')">Burbank</p>
+            </li>
+            <li>
+                <p onclick="alert('Loading weather report...')">Chicago</p>
+            </li>
+            <li>
+                <p onclick="alert('Loading weather report...')">Dallas</p>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <p style="margin: 0; font-size: xx-large;">San Jose</p>
+            <ul class="ul2">
+                <li><label style="font-size: 12pt;">show temperature in</label></li>
+                <li><select onchange="changeTemp(this)">
+                        <option value="c"><span>°</span>C</option>
+                        <option value="f"><span>°</span>F</option>
+                    </select></li>
+            </ul>
+        </header>
+        <section>
+            <div class="box">
+                <p class="days">Today</p>
+                <img src="assets/some_rain.png" alt="some_rain">
+                <p>some rain</p>
+                <ul class="cf°">
+                    <li class="red red1">24°</li>
+                    <li class="blue blue1">18°</li>
+                </ul>
+            </div>
+            <div class="box">
+                <p class="days">Tomorrow</p>
+                <img src="assets/some_sun.png" alt="some_sun">
+                <p>some sun</p>
+                <ul class="cf°">
+                    <li class="red red2">27°</li>
+                    <li class="blue blue2">19°</li>
+                </ul>
+            </div>
+            <div class="box">
+                <p class="days">Friday</p>
+                <img src="assets/some_clouds.png" alt="some_sun">
+                <p>some clouds</p>
+                <ul class="cf°">
+                    <li class="red red3">21°</li>
+                    <li class="blue blue3">16°</li>
+                </ul>
+            </div>
+            <div class="box">
+                <p class="days">Saturday</p>
+                <img src="assets/some_sun.png" alt="some_sun">
+                <p>some sun</p>
+                <ul class="cf°">
+                    <li class="red red4">26°</li>
+                    <li class="blue blue4">21°</li>
+                </ul>
+            </div>
+        </section>
+        <ul class="ul4">
+            <li>
+                <picture><img class="img1" src="assets/cookie.png" alt="cookie"></picture>
+            </li>
+            <li>
+                <aside>
+                    <p style="font-size: larger;">Stop! Cookie Time</p>
+                    <p style="font-size: large;">We use cookies (sadly not the edible ones) to personalize<br>
+                        content and ads. to provide social media features and to<br>
+                        analyse our traffc. <a href="#">Read more...</a> </p>
+                </aside>
+            </li>
+            <li><button onclick="hide()">I Accept</button></li>
+        </ul>
+    </main>
+    <script src="DojoWeather.js"></script>
+</body>
+
+</html>
