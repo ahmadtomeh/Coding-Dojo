@@ -11,8 +11,6 @@ var blue2_ = document.querySelector(".blue2");
 var blue3_ = document.querySelector(".blue3");
 var blue4_ = document.querySelector(".blue4");
 
-
-
 function changeTemp(elm) {
     if (elm.value == "f") {
         red1_.innerText = 75 + "°";
