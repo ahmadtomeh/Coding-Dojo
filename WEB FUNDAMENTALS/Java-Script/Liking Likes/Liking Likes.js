@@ -16,6 +16,6 @@ function addLike2() {
 
 var counter3 = 9;
 function addLike3() {
-     counter3++;
+    counter3++;
     like3.innerText = counter3 + " like(s)";
 }

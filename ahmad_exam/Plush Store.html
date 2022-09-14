@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Plush Store</title>
+    <link rel="stylesheet" href="Plush_Store.css">
+</head>
+
+<body>
+    <header><h4>PHONE GRIP ON SELECT PURCHASES</h4></header>
+    <div class="header2">
+        <p class="p1">PlushStar</p>
+        <input type="search" placeholder="Search">
+        <p class="add_cart">0</p>
+        <img src="cart-dark.png" alt="cart-dark">
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#" class="prod">Products</a>
+        <a href="#">Sales</a>
+        <a href="#">Blog</a>
+        <a href="#" onclick="alert('Contact Us at 555-5555')">Contact Us</a>
+    </nav>
+    <main>
+        <div><p>Plushy Store</p></div>
+        <section>
+            <p>62 Products, sorted by <span class="sort">Best Selling</span></p>
+            <label>Sort By</label>
+            <select onchange="changeSort(this)">
+                <option value="Best Selling">Best Selling</option>
+                <option value="Price">Price</option>
+            </select>
+        </section>
+        <article>
+            <div class="box">
+                <img src="product-image.png" alt="product-image">
+                <p class="description">Mischief Mouse</p>
+                <button onclick="add1()">BUY</button>
+            </div>
+            <div class="box">
+                <img src="product-image.png" alt="product-image">
+                <p class="description">Shy Shrew</p>
+                <button onclick="add1()">BUY</button>
+            </div>
+            <div class="box">
+                <img src="product-image.png" alt="product-image">
+                <p class="description">Hangry Hamster</p>
+                <button onclick="add1()">BUY</button>
+            </div>
+            <div class="box">
+                <img src="product-image.png" alt="product-image">
+                <p class="description">Chilly Chinchilla</p>
+                <button onclick="add1()">BUY</button>
+            </div>
+        </article>
+    </main>
+    <script src="Plush_Store.js"></script>
+</body>
+
+</html>

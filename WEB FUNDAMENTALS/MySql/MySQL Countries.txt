@@ -1,0 +1,65 @@
+select country.Name, countrylanguage.Language, countrylanguage.Percentage
+from country
+join countrylanguage
+on country.Code = countrylanguage.CountryCode
+where Language = "Slovene"
+order by countrylanguage.Percentage desc;
+
+-- ------------------------------------------------------------------------
+
+select country.Name, count(city.CountryCode) as cities
+from country
+join city
+on country.Code = city.CountryCode
+group by city.CountryCode
+order by cities desc;
+
+-- ------------------------------------------------------------------------
+
+select city.Name, city.Population , 136 as country_id
+from city
+join country
+on city.CountryCode = country.Code
+where city.CountryCode = "MEX"
+and city.Population > 500000;
+
+-- ------------------------------------------------------------------------
+
+select country.Name, countrylanguage.Language, countrylanguage.Percentage
+from country
+join countrylanguage
+on country.Code = countrylanguage.CountryCode
+where countrylanguage.Percentage > 89
+order by countrylanguage.Percentage desc;
+
+-- ------------------------------------------------------------------------
+
+select country.Name, country.SurfaceArea, country.Population
+from country
+where country.SurfaceArea < 501
+and country.Population > 100000;
+
+-- ------------------------------------------------------------------------
+
+select country.Name, country.GovernmentForm, country.Capital, country.LifeExpectancy
+from country
+where country.GovernmentForm = "Constitutional Monarchy"
+and country.Capital > 200
+and country.LifeExpectancy > 75;
+
+-- ------------------------------------------------------------------------
+
+select country.Name, city.Name, city.District, city.Population
+from country
+join city
+on country.Code = city.CountryCode
+where country.Name = "Argentina"
+and city.District = "Buenos Aires"
+and city.Population > 500000;
+
+-- -------------------------------------------------------------------------
+
+select country.Region, count(country.Region) as countries
+from country
+group by country.Region
+order by countries desc;

@@ -1,0 +1,55 @@
+insert into authors (authors_name, created_at, updated_at)
+values
+('Jane Austen',now(), now()),
+('Emily Dickinson',now(), now()),
+('Fyodor Dostoevsky',now(), now()),
+('William Shakespeare',now(), now()),
+('Lau Tzu',now(), now());
+--------------------------------------------------------------------
+insert into books (title, num_of_page, created_at, updated_at)
+values
+('C Sharp',100,now(), now()),
+('Java',200,now(), now()),
+('Python',300,now(), now()),
+('PHP',400,now(), now()),
+('Ruby',500,now(), now());
+--------------------------------------------------------------------
+select id from books where title = 'C sharp';
+update books set title = 'C#' where id = 1;
+--------------------------------------------------------------------
+update authors set authors_name = 'Bill' where id = 4;
+--------------------------------------------------------------------
+insert into favorites (author_id, book_id)
+values (1,1), (1,2);
+--------------------------------------------------------------------
+insert into favorites (author_id, book_id)
+values (2,1), (2,2), (2,3);
+--------------------------------------------------------------------
+insert into favorites (author_id, book_id)
+values (3,1), (3,2), (3,3), (3,4);
+--------------------------------------------------------------------
+select authors.id, authors.authors_name, favorites.book_id, books.title
+from authors
+join favorites
+on authors.id = favorites.author_id
+join books
+on favorites.book_id = books.id where books.id = 3;
+---------------------------------------------------------------------
+delete from favorites where book_id = 3 and author_id = 2;
+---------------------------------------------------------------------
+insert into favorites (author_id, book_id)
+values (5, 2);
+---------------------------------------------------------------------
+select authors.id, authors.authors_name, favorites.book_id, books.title
+from authors
+join favorites
+on authors.id = favorites.author_id
+join books
+on favorites.book_id = books.id where authors.id = 3;
+---------------------------------------------------------------------
+select authors.id, authors.authors_name, favorites.book_id, books.title
+from authors
+join favorites
+on authors.id = favorites.author_id
+join books
+on favorites.book_id = books.id where favorites.book_id = 5;

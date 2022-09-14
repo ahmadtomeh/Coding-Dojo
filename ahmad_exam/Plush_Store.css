@@ -1,0 +1,138 @@
+* {
+    margin: 0 auto;
+    font-family: cursive;
+}
+
+header {
+    width: 100%;
+    background-color: #c27ba0;
+    border: 2px solid black;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.header2 {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header2 img {
+    margin: 0;
+    transform: rotateY(180deg);
+    width: 5%;
+}
+
+.header2 .p1 {
+    margin: 0;
+    font-size: 30pt;
+}
+
+.header2 p {
+    margin: 0;
+}
+
+.header2 input {
+    width: 65%;
+    font-size: x-large;
+    border: 2px solid black;
+}
+
+nav {
+    width: 99%;
+    display: flex;
+    background-color: #dddddd;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin: 1%;
+    font-size: x-large;
+}
+
+main {
+    width: 80%;
+}
+
+main div {
+    width: 100%;
+    height: 100px;
+    margin: 15px 0 15px 0;
+    background-color: #c27ba0;
+    text-align: center;
+}
+main div p{
+    padding: 12px;
+    color: white;
+    font-size: 40pt;
+}
+
+section {
+    display: flex;
+    font-size: x-large;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+section select {
+    border: 2px solid black;
+    margin: 0;
+    font-size: x-large;
+}
+
+section label {
+    margin-right: 10px;
+}
+
+section p {
+    margin-left: 0;
+}
+
+article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    width: 20%;
+    text-align: center;
+    margin: 0;
+}
+
+article .box img {
+    width: 100%;
+}
+
+article .box button {
+    height: 50%;
+    width: 50%;
+    background-color: #c27ba0;
+    border-radius: 5px;
+    border-color: #ffffff00;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 15px;
+}
+
+.description {
+    font-size: x-large;
+    margin-top: 20px;
+    padding: 0;
+    color: black;
+}
+
+.sort{
+    font-weight: bold;
+}
+.prod{
+    font-weight: bold;
+    text-decoration: underline 5px #c27ba0;
+}

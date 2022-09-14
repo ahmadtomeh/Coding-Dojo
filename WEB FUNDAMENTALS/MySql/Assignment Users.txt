@@ -1,0 +1,22 @@
+insert into users (first_name, last_name, email)
+values ('ahmad','tomeh', 'ahmad_tomeh@gmail.com');
+
+insert into users (first_name, last_name, email)
+values ('khaled','ammar', 'khaled_ammar@gmail.com');
+
+insert into users (first_name, last_name, email)
+values ('raad','tomeh', 'raad_tomeh@gmail.com');
+
+select * from users;
+
+select * from users where email = 'ahmad_tomeh@gmail.com' and id = 1;
+
+select * from users where id = 3;
+
+UPDATE users SET last_name = 'Pancakes' WHERE id = 3;
+
+delete from users where id = 2;
+
+select * from users order by first_name;
+
+select * from users order by first_name desc;
