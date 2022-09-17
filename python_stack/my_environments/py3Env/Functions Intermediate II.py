@@ -49,8 +49,6 @@ def iterateDictionary(students):
     for i in range(0,len(students)):
         a =students[i]
         print( "first_name -", a['first_name']+",", "last_name -", a['last_name'])
-    for k in students[0]:
-        print(k)
 iterateDictionary(students)
 
 print("\n","*" * 100, "\n")
@@ -72,13 +70,10 @@ dojo = {
     'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
 def printInfo(dojo):
-    count=0
     for k in dojo:
         for x in range(len(dojo[k]) ):
-            count+=1
-        print(count,Text.upper(k))
+            x+=1
+        print("------------\n", x,Text.upper(k), "\n------------")
         for j in range(len(dojo[k])):
-            count=0
             print(dojo[k][j])
 printInfo(dojo)
-
