@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)   
 
-@app.route0('/play/<int:num>/<color>')
+@app.route('/play/<int:num>/<color>')
 def boxes(num, color):
     return render_template("playGround.html", num1 = num , c = color)
 
