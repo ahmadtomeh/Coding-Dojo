@@ -1,0 +1,16 @@
+*{
+    margin: 0 auto;
+}
+main{
+    padding-top: 15px;
+    width: 50%;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.box{
+    margin-right: 5px;
+    margin-bottom: 15px;
+    height: 150px;
+    width: 150px;
+}
