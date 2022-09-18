@@ -1,0 +1,21 @@
+*{
+    margin: 0 auto;
+}
+.row{
+    width: 800px;
+    
+    display: flex;
+}
+.col1{
+    background-color:red;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+}
+.col2{
+    background-color:black;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+
+}
