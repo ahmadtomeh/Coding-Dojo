@@ -1,0 +1,59 @@
+*{
+    margin: 0 auto;
+    font-size: x-large;
+    font-family: cursive;
+}
+
+main{
+    padding: 2%;
+    margin-top: 6%;
+    width: 50%;
+    border: 2px solid black;
+    align-items: center;
+}
+section{
+    padding: 2%;
+    margin-top: 6%;
+    width: 50%;
+    height: 415px;
+    border: 2px solid black;
+    align-items: center;
+}
+
+p{
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+select{
+    width: 51%;
+    margin: 0;
+}
+
+input{
+    width: 50%;
+    margin: 0;
+}
+
+.p{
+    width: 100%;
+    text-align: end;
+    display: block;
+    margin: 0;
+}
+
+.button{
+    margin: 0;
+    width: 15%;
+    color: white;
+    background-color: #76a5af;
+    box-shadow: 3px 3px black;
+}
+.button:active{
+    background-color: blue;
+}
+h3{
+    text-decoration: underline black;
+    margin-bottom: 25px;
+}

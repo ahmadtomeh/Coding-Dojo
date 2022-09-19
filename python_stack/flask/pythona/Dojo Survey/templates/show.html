@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        p{
+            margin-left: 4%;
+        }
+        .p{
+            margin-top: 22%;
+        }
+        span{
+            text-align: start;
+            display: block;
+            justify-content: space-around;
+            margin-left: 0;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+</form>
+<section>
+        <h3>Submitted Info</h3>
+        <p><span>Name : </span><span>{{name_on_template}}</span></p>
+        <p><span>Dojo Location : </span><span>{{location_on_template}}</span></p>
+        <p><span>Favorite Language : </span><span>{{language_on_template}}</span></p>
+    <p><span>Comment : </span><span>{{comment_on_template}}</span></p>
+    <p class="p"><input class="button" type="submit" value="Go Back"></p>
+</section>
+</body>
+</html>
