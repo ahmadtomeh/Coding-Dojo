@@ -1,0 +1,18 @@
+*{
+    margin: 0 auto;
+    text-align: center;
+    font-size: xx-large;
+    font-family:sans-serif;
+}
+
+div{
+    margin-top: 20%;
+}
+
+span{
+    font-size: 50pt;
+}
+
+p{
+    margin-bottom: 2%;
+}
