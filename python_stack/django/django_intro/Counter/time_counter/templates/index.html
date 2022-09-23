@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    button{
+        padding: 10px;
+        background-color: aqua;
+        box-shadow: 2px 2px pink;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+    form{
+        text-align: center;
+    }
+</style>
+<body>
+    <h2><strong>Counter</strong></h2>
+    <p><strong>{{counter}} times </strong> </p>
+    <form action='/add' method='post'>
+        {% csrf_token %}
+        <button> visit</button>
+    </form>
+    <form action='/reset' method='post'>
+        {% csrf_token %}
+        <button>Reset</button>
+    </form>
+</body>
+</html>
