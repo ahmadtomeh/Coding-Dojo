@@ -1,24 +1,53 @@
-*{
+* {
     margin: 0 auto;
     text-align: center;
     margin-top: 2%;
     font-family: cursive;
 }
-.a{
+
+.a {
     width: 5%;
     height: 50px;
     background-color: aqua;
     padding-top: 1%;
 }
-input:first-of-type{
-    width: 5%;
+
+.last {
+    width: 6%;
     font-size: large;
 }
-.correct{
+
+.correct {
     background-color: green;
     width: 20%;
+    height: 170px;
+    display: grid;
+    color: white;
+    font-size: xx-large;
+    border: 2px solid black;
 }
-.wrong{
+
+.wrong {
     background-color: red;
     width: 20%;
-}   
+    height: 100px;
+    padding-top: 5%;
+    color: white;
+    font-size: xx-large;
+    border: 2px solid black;
+}
+
+.a {
+    background-color: white;
+    width: 20%;
+    padding-top: 5%;
+    height: 100px;
+}
+.attempts{
+    background-color: blue;
+    width: 20%;
+    padding-top: 2%;
+    height: 150px;
+    font-size: larger;
+    color: white;
+}
