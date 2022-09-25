@@ -56,10 +56,12 @@
             height: 190px;
             border: 2px solid black;
         }
-        .p{
+
+        .p {
             margin-left: 3%;
         }
-        label{
+
+        label {
             padding-top: 10%;
         }
     </style>
@@ -73,28 +75,28 @@
         <section>
             <div class="box">
                 <p class="title">Farm</p>
-                <p>(earns 10-20 gold) <br> </p>
+                <p>(earns 10-20 gold)</p>
                 <input type="hidden" name="which" value="Farm">
                 <input type="submit" value="Find Gold!">
             </div>
-        </form>
-            <form action='/process_money' method='post'>
-                {% csrf_token %}
-            <div class="box">
-                <p class="title">Cave</p>
-                <p>(earns 10-20 gold)</p>
-                <input type="hidden" name="which" value="Cave">
-                <input type="submit" value="Find Gold!">
-            </div>
-            </form>
-            <form action='/process_money' method='post'>
-                {% csrf_token %}
-            <div class="box">
-                <p class="title">House</p>
-                <p>(earns 10-20 gold)</p>
-                <input type="hidden" name="which" value="House">
-                <input type="submit" value="Find Gold!">
-            </div>
+    </form>
+    <form action='/process_money' method='post'>
+        {% csrf_token %}
+        <div class="box">
+            <p class="title">Cave</p>
+            <p>(earns 10-20 gold)</p>
+            <input type="hidden" name="which" value="Cave">
+            <input type="submit" value="Find Gold!">
+        </div>
+    </form>
+    <form action='/process_money' method='post'>
+        {% csrf_token %}
+        <div class="box">
+            <p class="title">House</p>
+            <p>(earns 10-20 gold)</p>
+            <input type="hidden" name="which" value="House">
+            <input type="submit" value="Find Gold!">
+        </div>
     </form>
     <form action='/process_money' method='post'>
         {% csrf_token %}
