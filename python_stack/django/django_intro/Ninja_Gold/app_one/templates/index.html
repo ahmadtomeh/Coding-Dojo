@@ -7,6 +7,7 @@
     <style>
         * {
             margin: 0 auto;
+            font-family: cursive;
         }
 
         section {
@@ -67,7 +68,7 @@
 <body>
 
     <p><label class="title">Your Gold :</label> <label class="title">{{request.session.amount}}</label></p>
-    <form action='/add' method='post'>
+    <form action='/process_money' method='post'>
         {% csrf_token %}
         <section>
             <div class="box">
@@ -77,7 +78,7 @@
                 <input type="submit" value="Find Gold!">
             </div>
         </form>
-            <form action='/add' method='post'>
+            <form action='/process_money' method='post'>
                 {% csrf_token %}
             <div class="box">
                 <p class="title">Cave</p>
@@ -86,7 +87,7 @@
                 <input type="submit" value="Find Gold!">
             </div>
             </form>
-            <form action='/add' method='post'>
+            <form action='/process_money' method='post'>
                 {% csrf_token %}
             <div class="box">
                 <p class="title">House</p>
@@ -95,7 +96,7 @@
                 <input type="submit" value="Find Gold!">
             </div>
     </form>
-    <form action='/add' method='post'>
+    <form action='/process_money' method='post'>
         {% csrf_token %}
         <div class="box">
             <p class="title">Quest</p>
