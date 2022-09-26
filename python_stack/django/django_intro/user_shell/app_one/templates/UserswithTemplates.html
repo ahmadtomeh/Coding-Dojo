@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            text-align: center;
+            font-family: cursive;
+        }
+
+        table {
+            width: 50%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: start;
+        }
+        .a{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            text-align: start;
+        }
+        label{
+            margin: 0;
+            text-align: end;
+        }
+        input{
+            margin: 0;
+        }
+        .b{
+            width: 45%;
+            display: flex;
+            justify-content: space-between;
+        }
+        p{
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body>
+        <form action="\" method="post">
+            {%csrf_token%}
+            <br>
+            <h1>All The Users</h1><br><br>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+                {% for User in all_the_users %}
+                <tr>
+                    <td>{{ User.id}}</td>
+                    <td>{{ User.first_name}} {{ User.last_name}}</td>
+                    <td>{{User.email_address }}</td>
+                    <td>{{ User.age}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <hr>
+        </form>
+        <br><h1>Add a User</h1><br>
+        <form action="/add" method="post">
+            {%csrf_token%}
+            <div class="b">
+                <div class="a">
+                    <p><label>First Name</label> <input type="text" name="fname"></p>
+                    <p><label>Email</label> <input type="text" name="email"></p>
+                </div>
+                <div class="a">
+                    <p><label>Last Name</label> <input type="text" name="lname"></p>
+                    <p><label>Age</label> <input type="text" name="age"></p>
+                </div>
+            </div>
+            <br><input type="submit" value="Add">
+        </form>
+</body>
+
+</html>
