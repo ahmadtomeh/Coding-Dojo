@@ -1,1 +1,1 @@
-C:\Users\ahmad\Desktop\Coding-Dojo\python_stack\my_environments\djangoPy3Env\Scripts
+call C:\Users\ahmad\Desktop\Coding-Dojo\python_stack\my_environments\djangoPy3Env\Scripts\activate

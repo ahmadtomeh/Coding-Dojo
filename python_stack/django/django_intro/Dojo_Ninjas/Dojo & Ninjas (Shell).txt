@@ -1,0 +1,88 @@
+class Dojo(models.Model):
+    name = models.CharField(max_length=55)
+    city = models.CharField(max_length=55)
+    state = models.CharField(max_length=55)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+class Ninja(models.Model):
+    dojo = models.ForeignKey(Dojo, related_name="books", on_delete = models.CASCADE)
+    first_name = models.CharField(max_length=55)
+    last_name = models.CharField(max_length=55)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+..........................................................................
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+
+..........................................................................
+
+from app_one.models import *
+Dojo.objects.create(name = "ahmad", city = "tulkarem", state = "westbank")
+
+Dojo.objects.create(name = "khaled", city = "khanyonis", state = "gaza")
+
+Dojo.objects.create(name = "thabet", city = "ramallah", state = "westbank")
+
+...........................................................................
+
+c = Dojo.objects.get(id=1)
+c.delete()
+
+c = Dojo.objects.get(id=2)
+c.delete()
+
+c = Dojo.objects.get(id=3)
+c.delete()
+..............................................................................
+
+from app_one.models import *
+Dojo.objects.create(name = "ahmad", city = "tulkarem", state = "westbank")
+
+Dojo.objects.create(name = "khaled", city = "khanyonis", state = "gaza")
+
+Dojo.objects.create(name = "thabet", city = "ramallah", state = "westbank")
+
+...............................................................................
+
+Ninja.objects.create(dojo = Dojo.objects.get(id=4), first_name = "aws", last_name = "khresheh")
+Ninja.objects.create(dojo = Dojo.objects.get(id=4), first_name = "moamen", last_name = "zabin")
+Ninja.objects.create(dojo = Dojo.objects.get(id=4), first_name = "karem", last_name = "ammar")
+
+Ninja.objects.create(dojo = Dojo.objects.get(id=5), first_name = "jehad", last_name = "tomeh")
+Ninja.objects.create(dojo = Dojo.objects.get(id=5), first_name = "islam", last_name = "ammar")
+Ninja.objects.create(dojo = Dojo.objects.get(id=5), first_name = "raad", last_name = "tomeh")
+
+Ninja.objects.create(dojo = Dojo.objects.get(id=6), first_name = "adham", last_name = "sabbah")
+Ninja.objects.create(dojo = Dojo.objects.get(id=6), first_name = "saleh", last_name = "amarneh")
+Ninja.objects.create(dojo = Dojo.objects.get(id=6), first_name = "yazeed", last_name = "tomeh")
+
+.................................................................................................
+
+Ninja.objects.filter(dojo_id = Dojo.objects.first()).values()
+Ninja.objects.filter(dojo_id = Dojo.objects.last()).values()
+
+......................................................................
+
+Dojo.objects.last().__dict__
+
+......................................................................
+
+desc = models.CharField(max_length=55)
+
+......................................................................
+
+>>> exit()
+python manage.py makemigrations
+Select an option: 1
+>>> "old dojo"
+python manage.py makemigrations
+python manage.py migrate
+
+.......................................................................
+
+from app_one.models import *
+Dojo.objects.create(name = "faris", city = "nablus", state = "westbank", desc = "new dojo")
+
+........................................................................
