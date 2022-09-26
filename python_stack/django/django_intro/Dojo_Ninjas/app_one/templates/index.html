@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Add a Dojo</h1>
+        <h1>Add a Ninja</h1>
+    </header><br>
+    <section>
+        <aside>
+            <div>
+                <p><label>Name </label></p>
+                <p><label>City </label></p>
+                <p><label>state</label></p>
+            </div>
+            <form action="\addDojo" method="post">
+                {%csrf_token%}
+            <div>
+                <p><input type="text" name="name"></p>
+                <p><input type="text" name="city"></p>
+                <p><input type="text" name="state"></p>
+                <input type="submit" value="Add">
+            </div>
+        </form>
+        </aside>
+        <aside>
+            <div>
+                <p><label>First Name </label></p>
+                <p><label>Last Name </label></p>
+                <p><label>Dojo</label></p>
+            </div>
+            <div><form action="\addNinja" method="post">
+                {%csrf_token%}
+                <p><input type="text" name="fname"></p>
+                <p><input type="text" name="lname"></p>
+                <p><select name="dojo">
+                    {%for Dojo in Dojo%}
+                    <option value="{{Dojo.id}}">{{Dojo.name}}</option>
+                    {%endfor%}
+                    {%for Dojo in Dojo%}
+                    {{Dojo.id}} {{Dojo.name}}
+                    {%endfor%}
+                </select></p>
+                <input type="submit" value="Add">
+                </form>
+            </div>
+        </aside>
+    </section>
+    <br><hr><br>
+    <article>
+        <ul>
+            {%for Doj in Dojo%}
+            <br><ul><strong>{{Doj.name}}</strong></ul>
+            {%for Ninja in Doj.dojos.all%}
+            <li>{{Ninja.first_name}} {{Ninja.last_name}}</li>
+            {%endfor%}
+            {%endfor%}
+        </ul>
+    </article>
+</body>
+
+</html>

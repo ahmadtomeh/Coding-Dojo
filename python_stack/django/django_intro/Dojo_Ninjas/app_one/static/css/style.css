@@ -1,0 +1,24 @@
+*{
+    font-family: cursive;
+}
+p{
+    width: 100px;
+}
+select{
+    width: 204%;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+}
+aside{
+    display: flex;
+    justify-content: space-between;
+}
+hr{
+    border: 1px solid black;
+}

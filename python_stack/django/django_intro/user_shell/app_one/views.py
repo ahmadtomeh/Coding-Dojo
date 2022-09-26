@@ -4,7 +4,7 @@ from .models import User
 # show all of the data from a table
 def index(request):
     context = {
-    	"all_the_users": User.objects.all()
+        "all_the_users": User.objects.all()
     }
     return render(request, "UserswithTemplates.html", context)
 
