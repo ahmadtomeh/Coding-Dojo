@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books & Authors</title>
+    <style>
+        main {
+            text-align: start;
+        }
+
+        .a {
+            width: 80%;
+            margin: 10%;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            padding-left: 2%;
+        }
+
+        .desc {
+            display: flex;
+        }
+
+        label {
+            margin-left: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="a">
+            <form action="/addBook/{{one_author.id}}" method="post">
+                {%csrf_token%}
+            <h1>{{one_author.first_name}} {{one_author.last_name}}</h1>
+            <section>
+                <div>
+                    <p>ID : <label>{{one_author.id}}</label></p>
+                    <p class="desc">Description: <label> {{ one_author.notes}}</label></p>
+                </div>
+
+            </section>
+            <ul>Books :</ul>
+            {%for a in one_author.books.all%}
+            <li>{{a.title}}</li>
+            {%endfor%}
+            <select name="books" id="">
+                {%for b in all_the_books%}
+                {%if b not in one_author.books.all%}
+                <option value="{{b.id}}">{{b.title}}</option>
+                {%endif%}
+                {% endfor %}
+                    <input type="submit" value="Add">
+                </form>
+            </select>
+        </div>
+
+    </main>
+</body>
+
+</html>

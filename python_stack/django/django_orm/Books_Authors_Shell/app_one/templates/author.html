@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books&Authors</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        section {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <h1>Add an Author</h1>
+            <section>
+                <div>
+                    <p>First Name</p>
+                    <p>Last name</p>
+                    <p>Notes</p>
+                </div>
+                <div>
+                    <form action="/createAuthor" method="post">
+                        {%csrf_token%}
+                        <p><input type="text" name="fname"></p>
+                        <p><input type="text" name="lname"></p>
+                        <p><textarea name="notes" cols="21" rows="5"></textarea></p>
+                        <p><input type="submit" value="Add"></p>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+            {% for Author in all_the_authors %}
+            <tr>
+                <td>{{Author.id}}</td>
+                <td>{{Author.first_name}} {{Author.last_name}}</td>
+                <td><a href="/showAuthor/{{Author.id}}">View</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">go to book</a>
+    </main>
+</body>
+
+</html>
