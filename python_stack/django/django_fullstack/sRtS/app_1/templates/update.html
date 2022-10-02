@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Create</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+
+<body>
+    <p class="l"><a href="/shows">goBack</a></p>
+    <header>
+        {%for i in one_show%}
+        <form action="/update" method="post">
+            {%csrf_token%}
+            <h1>Edit Show {{i.id}}</h1>
+            <input type="hidden" name="id" value="{{i.id}}">
+    </header>
+    <main>
+        <div class="a">
+            <p>title</p>
+            <input type="text" name="title" value="{{i.title}}">
+        </div>
+        <section>
+            <div>
+                <br>
+                <p>Network</p>
+                <input type="text" name="net" value="{{i.network}}">
+            </div>
+            <div>
+                <br>
+                <p>Release Date</p>
+                <input type="date" name="date" value="date" value="{{i.date}}">
+            </div>
+        </section>
+        <div class="b">
+            <br>
+            <p>Description</p>
+            <p><textarea name="desc" id="" cols="30" rows="10">{{i.desc}}</textarea></p>
+            <input type="submit" value="Update">
+        </div>
+    </main>
+    </form>
+    {%endfor%}
+</body>
+
+</html>

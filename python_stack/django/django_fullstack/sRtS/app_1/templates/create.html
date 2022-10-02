@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Create</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+
+<body>
+    <p class="l"><a href="/shows">goBack</a></p>
+    <header>
+        <h1>Add a New Show</h1>
+    </header>
+    <form action="/create" method="post">
+        {%csrf_token%}
+        <main>
+            <div class="a">
+                <p>title</p>
+                <input type="text" name="title">
+            </div>
+            <section>
+                <div>
+                    <br>
+                    <p>Network</p>
+                    <input type="text" name="net">
+                </div>
+                <div>
+                    <br>
+                    <p>Release Date</p>
+                    <input type="date" name="date" value="date">
+                </div>
+            </section>
+            <div class="b">
+                <br>
+                <p>Description</p>
+                <p><textarea name="desc" id="" cols="30" rows="10"></textarea></p>
+                <input type="submit" value="Create">
+            </div>
+        </main>
+    </form>
+</body>
+
+</html>

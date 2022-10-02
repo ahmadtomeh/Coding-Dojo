@@ -47,8 +47,7 @@ Author.objects.get(id=3).books.add(book1,book2,book3,book4)
 
 Author.objects.filter(books = "3").values('id','first_name', 'books')
 
-x=book3.authors.first()
-x.delete()
+Book.objects.get(id=3).authors.remove(Book.objects.get(id=3).authors.first())
 
 Author.objects.get(id=5).books.add(book2)
 

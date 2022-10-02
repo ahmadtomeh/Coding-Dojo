@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Read (One)</title>
+    <style>
+        *{
+            font-family: cursive;
+        }
+        main {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="id" value="{{one.id}}">
+            <p style="text-align: end; margin: 0 auto;"><a href="/shows">Go Back</a></p>
+            <h1>TV Show {{one.id}}</h1>
+            <p>Title: {{one.title}}</p>
+            <p>Network: {{one.network}}</p>
+            <p>Release Date: {{one.date}}</p>
+            <p>Description: {{one.desc}}</p><br><br><br>
+            <p>Last update: {{one.updated_at}}</p>
+            <p><a href="/shows/{{one.id}}/edit">Edit</a> | <a href="/delete/{{one.id}}">Delete</a></p>
+        </form>
+    </main>
+</body>
+
+</html>
