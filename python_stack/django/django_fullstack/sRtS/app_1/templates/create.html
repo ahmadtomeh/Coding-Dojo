@@ -7,10 +7,19 @@
 </head>
 
 <body>
-    <p class="l"><a href="/shows">goBack</a></p>
+    <p class="l"><a href="/shows">Go Back</a></p>
     <header>
         <h1>Add a New Show</h1>
     </header>
+    <center>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </center>
     <form action="/create" method="post">
         {%csrf_token%}
         <main>

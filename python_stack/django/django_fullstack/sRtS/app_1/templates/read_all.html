@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <title>Read (All)</title>
     <style>
-        *{
+        * {
             font-family: cursive;
         }
-        table{
+
+        table {
             width: 80%;
         }
-        h1{
+
+        h1 {
             width: 80%;
             margin: 0 auto;
         }
-        p{
+
+        p {
             width: 80%;
             margin: 0 auto;
         }
@@ -39,12 +42,14 @@
                 <td>{{i.title}}</td>
                 <td>{{i.network}}</td>
                 <td>{{i.date}}</td>
-                <td><a href="shows/{{i.id}}">Show</a>|<a href="/shows/{{i.id}}/edit">Edit</a>|<a href="/delete/{{i.id}}">Delete</a></td>
+                <td><a href="shows/{{i.id}}">Show</a>|<a href="/shows/{{i.id}}/edit">Edit</a>|<a
+                        href="/delete/{{i.id}}">Delete</a></td>
                 {%endfor%}
             </tr>
         </table>
     </center>
-    <br><p><a href="/shows/new">Add a New Show</a></p>
+    <br>
+    <p><a href="/shows/new">Add a New Show</a></p>
 </body>
 
 </html>

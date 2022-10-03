@@ -7,40 +7,48 @@
 </head>
 
 <body>
-    <p class="l"><a href="/shows">goBack</a></p>
+
+    <p class="l"><a href="/shows">Go Back</a></p>
     <header>
-        {%for i in one_show%}
         <form action="/update" method="post">
             {%csrf_token%}
             <h1>Edit Show {{i.id}}</h1>
-            <input type="hidden" name="id" value="{{i.id}}">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <input type="hidden" name="id" value="{{one_show.id}}">
     </header>
     <main>
         <div class="a">
             <p>title</p>
-            <input type="text" name="title" value="{{i.title}}">
+            <input type="text" name="title" value="{{one_show.title}}">
         </div>
         <section>
             <div>
                 <br>
                 <p>Network</p>
-                <input type="text" name="net" value="{{i.network}}">
+                <input type="text" name="net" value="{{one_show.network}}">
             </div>
             <div>
                 <br>
                 <p>Release Date</p>
-                <input type="date" name="date" value="date" value="{{i.date}}">
+                <input type="date" name="date" value={{one_show.date |date:'Y-m-d' }} placeholder="{{one_show.date}}">
             </div>
         </section>
         <div class="b">
             <br>
             <p>Description</p>
-            <p><textarea name="desc" id="" cols="30" rows="10">{{i.desc}}</textarea></p>
+            <p><textarea name="desc" id="" cols="30" rows="10">{{one_show.desc}}</textarea></p>
             <input type="submit" value="Update">
         </div>
     </main>
     </form>
-    {%endfor%}
+    <center><br><a href="/shows/{{i.id}}">Go To Show</a></center>
+
 </body>
 
 </html>
