@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Welcome</title>
+    <style>
+        ul {
+            padding: 0;
+            text-align: start;
+            width: 80%;
+        }
+
+        li {
+            padding-left: 5%;
+            text-align: start;
+            width: 80%;
+        }
+
+        textarea {
+            width: 80%;
+        }
+
+        p {
+            text-align: end;
+            width: 80%;
+        }
+
+        .c{
+            color: red;
+            padding-left: 5%;
+        }
+    </style>
 </head>
+
 <body>
     <a href="/logout">Log Out</a>
-        <h1>Success! Welcome, {{reg.first_name}}</h1>
+    <h1>Success! Welcome, {{reg.first_name}}</h1>
+    <hr>
+    <center>
+        <form action="/addm" method="post">
+            {%csrf_token%}
+            <textarea name="pm" id="" cols="30" rows="10"></textarea><br>
+            <p><input type="submit" value="Post a message"></p>
+        </form>
+        {%for m in mes reversed %}
+        <ul> {{m.user.first_name}} {{m.created_at}}</ul>
+        <li>{{m.message}}</li>
+        {%for c in m.comments.all%}
+        <ul class="c" >{{c.user.first_name}} {{c.created_at}}</ul>
+        <li class="c">{{c.comment}}</li>
+        {%endfor%}  
+        <form action="/addc" method="post">
+            {%csrf_token%}
+            <textarea type="text" name="pc"></textarea>
+            <p><button type="submit" name="mid" value="{{m.id}}">post a zip</button></p>
+        </form>
+            {%endfor%}
+    </center>
 </body>
+
 </html>

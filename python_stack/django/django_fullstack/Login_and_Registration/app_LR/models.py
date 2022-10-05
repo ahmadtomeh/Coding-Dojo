@@ -10,17 +10,17 @@ class BlogManager(models.Manager):
         if len(postData['fname']) < 2 :
             errors["fname"] = "First name should be at least 2 characters"
         if len(postData['lname']) < 2:
-            errors["lname"] = "Last name should be at least 3 characters"
+            errors["lname"] = "Last name should be at least 2 characters"
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
         if not EMAIL_REGEX.match(postData['email']):    # test whether a field matches the pattern            
             errors['email'] = "Invalid email address!"
         if len(postData['pass']) < 8 :
-            errors["pass"] = "Password should be at least 10 characters"
+            errors["pass"] = "Password should be at least 8 characters"
         if (postData['pass']) != (postData['cpass']):
-            errors["pass"] = "Password"
+            errors["pass"] = "Please check your password"
         return errors
 
-class RegUser(models.Model):
+class Users(models.Model):
     first_name = models.CharField(max_length = 255, null = True)
     last_name = models.CharField(max_length = 255, null = True)
     email = models.EmailField(max_length = 255, null = True)
@@ -28,5 +28,18 @@ class RegUser(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     objects = BlogManager()
+    
+class Messages(models.Model):
+    user = models.ForeignKey(Users, related_name="messages", on_delete = models.CASCADE, null = True)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
+    
+class Comments(models.Model):
+    message = models.ForeignKey(Messages, related_name="comments", on_delete = models.CASCADE, null = True)
+    user = models.ForeignKey(Users, related_name="comments", on_delete = models.CASCADE, null = True)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
 
 # Create your models here.
