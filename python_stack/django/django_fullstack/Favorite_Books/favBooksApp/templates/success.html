@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        main{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome, {{reg.first_name}}!</h1>
+        <a href="/logout">Log Out</a>
+    </header>
+    <hr>
+    <main>
+        <form action="/addb" method="post">
+            {%csrf_token%}
+            <h2>Add a Favorite Book</h2>
+            <table>
+                <tr>
+                    <td><label>Title</label></td>
+                    <td><input type="text" name="title" placeholder="Title"></td>
+                </tr>
+                <tr>
+                    <td><label>Description</label></td>
+                    <td><textarea name="desc" placeholder="Description"></textarea></td>
+                </tr>
+            </table>
+            <p><input type="submit" name="submit" value="Register"></p>
+        </form>
+        <aside>
+            <h2>All Books</h2>
+            {%for b in books%}
+            <p><a href="/books/{{b.id}}">{{b.title}}</a></p>
+            {%if b in userFAV%}
+            <p>(added by {{b.uploaded_by.first_name}} {{b.uploaded_by.last_name}})</p>
+            <p>this is one of your favorites</p>
+            {%else%}
+            <p>(added by {{b.uploaded_by.first_name}} {{b.uploaded_by.last_name}})</p>
+            <a href="/favBook/{{b.id}}">add</a>
+            {%endif%}
+            <p>-------------------------</p>
+            {%endfor%}
+        </aside>
+    </main>
+</body>
+
+</html>

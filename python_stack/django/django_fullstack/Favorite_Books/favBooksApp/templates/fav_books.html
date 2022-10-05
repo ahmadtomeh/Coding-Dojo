@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        div{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome, {{reg.first_name}}!</h1>
+        <a href="/logout">Log Out</a>
+    </header>
+    <hr>
+    {%if reg.id == books.uploaded_by.id%}
+    <main>
+        <article>
+            <form action="/update/{{books.id}}" method="post">
+                {%csrf_token%}
+            <input type="text" name="title" value="{{books.title}}">
+            <p>Added by: {{books.uploaded_by.first_name}} {{books.uploaded_by.last_name}}</p>
+            <p>Added on: {{books.created_at}}</p>
+            <p>Last updated on: {{books.updated_at}}</p>
+            <div>
+                <label>Description: </label>
+                <p><textarea name="desc" cols="30"rows="10">{{books.desc}}</textarea>
+                    <br>
+                    <button>Update</button>
+                </form>
+                <form action="/delete/{{books.id}}" method="post">
+                    {%csrf_token%}
+                    <button>Delete</button>
+                </form>
+                </p>
+            </div>
+        </article>
+        <aside>
+            <h2>Users Who Like This Book:</h2>
+            {%for u in fav%}
+            {% if reg.id == u.id%}
+            <li>{{u.first_name}} {{u.last_name}}</li>
+            {%else%}
+            <li>{{u.first_name}} {{u.last_name}}</li>
+            {%endif%}
+            {%endfor%}
+            {%if reg in fav%}
+            <a href="/un/{{books.id}}">un</a>
+            {%else%}
+            <a href="/add/{{books.id}}">add</a>
+            {%endif%}
+
+        </aside>
+    </main>
+    {%else%}
+    <main>
+        <article>
+            <p>{{books.title}}</p>
+            <p>Added by: {{books.uploaded_by.first_name}} {{books.uploaded_by.last_name}}</p>
+            <p>Added on: {{books.created_at}}</p>
+            <p>Last updated on: {{books.updated_at}}</p>
+            <div>
+                <p><label>Description: </label>{{books.desc}}</p>
+            </div>
+        </article>
+        <aside>
+            <h2>Users Who Like This Book:</h2>
+            {%for u in fav%}
+            {% if reg.id == u.id%}
+            <li>{{u.first_name}} {{u.last_name}}</li>
+            {%else%}
+            <li>{{u.first_name}} {{u.last_name}}</li>
+            {%endif%}
+            {%endfor%}
+            {%if reg in fav%}
+            <a href="/un/{{books.id}}">un</a>
+            {%else%}
+            <a href="/add/{{books.id}}">add</a>
+            {%endif%}
+        </aside>
+    </main>
+    {%endif%}
+</body>
+
+</html>
