@@ -56,16 +56,25 @@ def FavBook(request, id):
         return redirect('/')
     
 def login(request):
-    user = Users.objects.filter(email=request.POST['email2'])
-    if user:
-        user1=user[0]
-        if bcrypt.checkpw(request.POST['pass2'].encode(), user1.password.encode()):
-            request.session['userid'] = user1.id
-            return redirect('/books')
+    errors = Users.objects.basic_validator(request.POST)
+        # check if the errors dictionary has anything in it
+    if len(errors) > 0:
+        # if the errors dictionary contains anything, loop through each key-value pair and make a flash message
+        for key, value in errors.items():
+            messages.error(request, value)
+        # redirect the us er back to the form to fix the errors
+        return redirect('/')
+    else:
+        user = Users.objects.filter(email=request.POST['email2'])
+        if user:
+            user1=user[0]
+            if bcrypt.checkpw(request.POST['pass2'].encode(), user1.password.encode()):
+                request.session['userid'] = user1.id
+                return redirect('/books')
+            else:
+                return redirect('/')
         else:
             return redirect('/')
-    else:
-        return redirect('/')
         
 def logout(request):
     del request.session['userid']

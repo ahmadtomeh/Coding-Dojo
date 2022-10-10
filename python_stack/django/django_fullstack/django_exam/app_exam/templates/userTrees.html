@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arbortrary</title>
+    <style>
+        *{
+            font-family:cursive;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        aside {
+            display: flex;
+            justify-content: space-around;
+        }
+        main table {
+            margin-left: 10%;
+            
+            width: 50%;
+        }
+        main h1{
+            margin-left: 10%;
+        }
+        main{
+            margin-top: 5%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Arbortrary</h1>
+            <label>A site to track randomly planted trees</label>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td><a href="/user/account">My Trees</a></td>
+                    <td>
+                        <h1>Welcome, {{reg.first_name}}!</h1>
+                    </td>
+                </tr>
+            </table>
+            <aside>
+            <form action="/dashboard" method="post">
+                {%csrf_token%}
+            <button>Dashboard</button>
+        </form>
+            <form action="/logout" method="post">
+                {%csrf_token%}
+                <button>Logout</button>
+            </form></aside>
+        </div>
+    </header>
+    <main>
+        <h1>Manage My Trees</h1>
+        <table border="1">
+            <tr>
+                <th>Species</th>
+                <th>Date Planted</th>
+                <th>Action</th>
+            </tr>
+            {%for t in trees%}
+            <tr style="background-color: gray;">
+                <td>{{t.species}}</td>
+                <td>{{t.planted_by.first_name}} {{t.planted_by.last_name}}</td>
+                <td><a href="/delete/{{t.id}}"> Delete </a><a href="/edit/{{t.id}}">  Edit </a></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </main>
+</body>
+</html>

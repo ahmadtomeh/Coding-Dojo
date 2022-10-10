@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Arbortrary</title>
+    <style>
+        *{
+            font-family:cursive;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        aside {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        ul {
+            padding: 0;
+            text-align: start;
+            width: 80%;
+        }
+
+        li {
+            padding-left: 5%;
+            text-align: start;
+            width: 80%;
+        }
+
+        textarea {
+            width: 80%;
+        }
+
+        p {
+            text-align: end;
+            width: 80%;
+        }
+
+        .c {
+            color: red;
+            padding-left: 5%;
+        }
+
+        main table {
+            margin-left: 10%;
+            margin-top: 5%;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Arbortrary</h1>
+            <label>A site to track randomly planted trees</label>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td><a href="/user/account">My Trees</a></td>
+                    <td>
+                        <h1>Welcome, {{reg.first_name}}!</h1>
+                    </td>
+                </tr>
+            </table>
+            <aside>
+                <form action="/new/tree" method="post">
+                    {%csrf_token%}
+                    <button>Plant a Tree</button>
+                </form>
+                <form action="/logout" method="post">
+                    {%csrf_token%}
+                    <button>Logout</button>
+                </form>
+            </aside>
+        </div>
+    </header>
+    <main>
+        <table border="1">
+            <tr>
+                <th>Species</th>
+                <th>Planted By</th>
+                <th>Action</th>
+            </tr>
+            {%for t in trees%}
+            <tr style="background-color: gray;">
+                <td>{{t.species}}</td>
+                <td>{{t.planted_by.first_name}} {{t.planted_by.last_name}}</td>
+                <td><a href="/show/{{t.id}}">details</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </main>
+</body>
+
+</html>

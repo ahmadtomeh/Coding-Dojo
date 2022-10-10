@@ -4,19 +4,29 @@
 <head>
     <title>Login & Registration</title>
     <style>
+        *{
+            font-family:cursive;
+        }
         main {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
         }
 
-        h1,
-        p {
+        h1{
+
             text-align: center;
+        }
+        p{
+            text-align: start;
         }
 
         td {
             padding-bottom: 10px;
             width: 100px;
+        }
+        button{
+            box-shadow: 2px 2px black;
+            border-radius: 1px;
         }
     </style>
 </head>
@@ -27,30 +37,25 @@
 
             <form action="/reg" method="post">
                 {%csrf_token%}
-                <h1>Registration</h1>
+                <h1>Register</h1>
                 <table>
                     <tr>
-                        <td><label>First Name</label></td>
-                        <td><input type="text" name="fname" placeholder="First name"></td>
+                        <td><label>First Name:</label><input type="text" name="fname"></td>
                     </tr>
                     <tr>
-                        <td><label>Last Name</label></td>
-                        <td><input type="text" name="lname" placeholder="Last name"></td>
+                        <td><label>Last Name:</label><input type="text" name="lname"></td>
                     </tr>
                     <tr>
-                        <td><label>Email</label></td>
-                        <td><input type="text" name="email" placeholder="Email"></td>
+                        <td><label>Email:</label><input type="text" name="email"></td>
                     </tr>
                     <tr>
-                        <td><label>Password</label></td>
-                        <td><input type="password" name="pass" placeholder="Password"></td>
+                        <td><label>Password:</label><input type="password" name="pass"></td>
                     </tr>
                     <tr>
-                        <td><label>Confirm PW</label></td>
-                        <td><input type="password" name="cpass" placeholder="Confirm password"></td>
+                        <td><label>Confirm Password:</label><input type="password" name="cpass"></td>
                     </tr>
                 </table>
-                <p><input type="submit" name="submit" value="Register"></p>
+                <p><button name="submit" value="Register">Register</button></p>
             </form>
             {% if messages %}
             <ul class="messages">
@@ -67,22 +72,14 @@
                 <h1>Login</h1>
                 <table>
                     <tr>
-                        <td><label>Email</label></td>
-                        <td><input type="text" name="email2" placeholder="Email"></td>
+                        <td><label>Email:</label><input type="text" name="email2"></td>
                     </tr>
                     <tr>
-                        <td><label>Password</label></td>
-                        <td><input type="text" name="pass2" placeholder="Password"></td>
+                        <td><label>Password:</label><input type="text" name="pass2"></td>
                     </tr>
                 </table>
-                <p><input type="submit" name="submit" value="Log In"></p>
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li style="color: red;" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                <p><button name="submit" value="Log In">Log In</button></p>
+                
             </form>
         </aside>
     </main>
