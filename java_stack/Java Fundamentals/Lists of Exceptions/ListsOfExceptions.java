@@ -9,13 +9,13 @@ public class ListsOfExceptions{
         myList.add(48);
         myList.add("Goodbye World");
 
-        for (int i = 0; i < myList.size(); i++) {
-            try {
+        try {
+            for(int i = 0; i < myList.size(); i++) {
                 Integer castedValue = (Integer) myList.get(i);
-            } catch (Exception e) {
-                System.out.println(e);
             }
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("something went wrong");
         }
     }
-
 }
