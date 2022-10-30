@@ -11,6 +11,8 @@ public class TestOrders {
         Order order2 = new Order("Jimmy");
         Order order3 = new Order("Noah");
         Order order4 = new Order("sam");
+        Order order5 = new Order();
+        Order order6 = new Order();
 
         order1.addItem(item1);
         order1.addItem(item3);
@@ -22,11 +24,17 @@ public class TestOrders {
         order3.addItem(item3);
         order4.addItem(item4);
         order4.addItem(item2);
+        order5.addItem(item1);
+        order5.addItem(item2);
+        order6.addItem(item3);
+        order6.addItem(item4);
         order1.setReady(true);
         order2.setReady(true);
         order1.display();
         order2.display();
         order3.display();
         order4.display();
+        order5.display();
+        order6.display();
     }
 }

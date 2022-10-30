@@ -49,7 +49,6 @@ public class Order {
 
     public void display() {
         System.out.println("Customer Name: " + name);
-        Double total;
         for (Item item : items) {
             System.out.println(item.getName() + " : " + item.getPrice() + "$");
         }
