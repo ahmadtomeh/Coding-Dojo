@@ -4,5 +4,6 @@
         "gensalt",
         "hashpw",
         "userid"
-    ]
+    ],
+    "spring.dashboard.enableGutter": "auto"
 }
