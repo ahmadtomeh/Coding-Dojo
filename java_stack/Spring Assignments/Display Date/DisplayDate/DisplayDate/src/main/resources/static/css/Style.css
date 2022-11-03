@@ -1,0 +1,15 @@
+@charset "windows-1256";
+
+p {
+	margin-top: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.time{
+	font-family: cursive;
+	color: green;
+}
+.date{
+	font-family: cursive;
+	color: blue;
+}
