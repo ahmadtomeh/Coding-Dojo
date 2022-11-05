@@ -32,7 +32,7 @@ public class CounterApplication {
 		@RequestMapping("/zero")
 		public String index2(HttpSession session) {
 				session.setAttribute("count", 0);
-			return "counter.jsp";
+			return "redirect:/counter";
 		}
 		
 		@RequestMapping("/counter")

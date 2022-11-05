@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>you have visted http://your_server ${countToShow},</p>
+<p>you have visted http://your_server ${countToShow},times</p>
 <p><a href="/">Test another visit?</a></p>
 <p><a href="/add2">Add 2 times to counter</a></p>
 <p><a href="/zero">set the counter back to zero</a></p>
