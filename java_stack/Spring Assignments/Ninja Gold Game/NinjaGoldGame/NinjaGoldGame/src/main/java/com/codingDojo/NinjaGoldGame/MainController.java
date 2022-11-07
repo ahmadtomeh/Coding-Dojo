@@ -56,7 +56,7 @@ public class MainController {
 			
 			
 			if (rand_int2 < 0) {
-				msg.add(0,"You failed a " + which + " and lost " + (rand_int2 * -1) + " gold. Ouch. " + stringDate);
+				msg.add(0,	"You failed a " + which + " and lost " + (rand_int2 * -1) + " gold. Ouch. " + stringDate);
 				System.out.println(msg);
 			} else {
 				msg.add(0,"You completed a " + which + " and earned " + rand_int2 + " gold. " + stringDate);
