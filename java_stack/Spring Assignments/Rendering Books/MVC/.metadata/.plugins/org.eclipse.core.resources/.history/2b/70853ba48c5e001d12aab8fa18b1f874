@@ -1,0 +1,5 @@
+package com.codingDojo.MVC.models;
+
+public class Book {
+
+}
