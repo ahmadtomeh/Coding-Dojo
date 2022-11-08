@@ -1,0 +1,5 @@
+package com.codingDojo.MVC.repositories;
+
+public interface BookRepository {
+
+}
