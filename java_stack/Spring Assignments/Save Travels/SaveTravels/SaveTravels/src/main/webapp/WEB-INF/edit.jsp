@@ -20,22 +20,22 @@
 <form:form action="/expenses/${expenses.id}" method="post" modelAttribute="expenses">
     <input type="hidden" name="_method" value="put">
     <p>
-        <form:label path="name">Expense : </form:label>
+        <form:label path="name" style = "width: 10%">Expense : </form:label>
         <form:input path="name"/>
         <form:errors path="name" class="text-danger"/>
     </p>
     <p>
-        <form:label path="vendor">Vendor : </form:label>
+        <form:label path="vendor" style = "width: 10%">Vendor : </form:label>
         <form:input path="vendor"/>
         <form:errors path="vendor" class="text-danger"/>
     </p>
     <p>
-        <form:label path="amount">Amount : </form:label>
+        <form:label path="amount" style = "width: 10%">Amount : </form:label>
         <form:input type="number" path="amount"/>
         <form:errors path="amount" class="text-danger"/>  
     </p> 
     <p>
-        <form:label path="description">Description :</form:label>
+        <form:label path="description" style = "width: 10%">Description :</form:label>
         <form:textarea path="description"/>
         <form:errors path="description" class="text-danger"	/>
     </p>     
