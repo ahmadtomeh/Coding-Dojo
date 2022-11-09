@@ -31,9 +31,7 @@
 					<td><a href="/languages/${languages.id}">${languages.name}</a></td>
 					<td><c:out value="${languages.creator}"></c:out></td>
 					<td><c:out value="${languages.version}"></c:out></td>
-					<td><form action="/languages/${languages.id}" method="post">
-							<input type="hidden" name="_method" value="delete">
-							<input type="submit" value="Delete" style = "color: blue" class = "btn">						</form></td>
+					<td><a href="/languages/${languages.id}/delete">Delete</a>
 					<td><a href="/languages/${languages.id}/edit">Edit</a></td>
 				</tr>
 			</c:forEach>
