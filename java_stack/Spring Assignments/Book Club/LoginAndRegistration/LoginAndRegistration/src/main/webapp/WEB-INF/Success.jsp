@@ -21,8 +21,8 @@
 	<p class="container">Books from everyone's shelves:</p>
 	<br>
 	<p class="container">
-		<a href="/logout">logout</a>
-		<a href="/books/new">+ Add a book to my shelf!</a>
+		<a href="/logout">logout</a> <a href="/books/new">+ Add a book to
+			my shelf!</a>
 	</p>
 
 
@@ -33,6 +33,7 @@
 				<th class="jumbotron text-center"><h3>Title</h3></th>
 				<th class="jumbotron text-center"><h3>Author Name</h3></th>
 				<th class="jumbotron text-center"><h3>Posted By</h3></th>
+				<th class="jumbotron text-center"><h3>Actions</h3></th>
 			</tr>
 		</thead>
 
@@ -42,10 +43,56 @@
 				<td><a href="/books/${i.id}">${i.title}</a></td>
 				<td>${i.author}</td>
 				<td>${i.user.userName}</td>
+
+				<c:choose>
+					<c:when test="${i.user.id != user_id}">
+
+
+						<form action="/book/${i.id}" method="post">
+							<input type="hidden" name="_method" value="put">
+							<p>
+
+								<input type="hidden" name="userborrow" value="${user_id}" />
+
+							</p>
+							<td>
+							<button class = "btn btn-link">borrow</button>
+							</td>
+							
+						</form>
+					</c:when>
+					<c:otherwise>
+						<td><a href="/books/${i.id }/edit">edit | </a> <a
+							href="/books/${i.id }/delete"> Delete</a></td>
+					</c:otherwise>
+				</c:choose>
 			</tr>
 		</c:forEach>
+	</table>
 
+	<table class="table table-bordered border border-dark container">
+		<thead>
+			<tr>
+				<th class="jumbotron text-center"><h3>ID</h3></th>
+				<th class="jumbotron text-center"><h3>Title</h3></th>
+				<th class="jumbotron text-center"><h3>Author Name</h3></th>
+				<th class="jumbotron text-center"><h3>Posted By</h3></th>
+				<th class="jumbotron text-center"><h3>Actions</h3></th>
+			</tr>
+		</thead>
 
+		<c:forEach var="i" items="${borrowed}">
+			<tr>
+				<td>${i.id}</td>
+				<td><a href="/books/${i.id}">${i.title}</a></td>
+				<td>${i.author}</td>
+				<td>${i.user.userName}</td>
+				<td><a href="/book/${i.id}/return">return</a></td>
+			</tr>
+		</c:forEach>
 	</table>
 </body>
 </html>
+
+
+

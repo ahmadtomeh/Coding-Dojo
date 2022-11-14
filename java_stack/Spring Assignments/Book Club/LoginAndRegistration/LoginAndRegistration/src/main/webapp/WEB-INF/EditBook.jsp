@@ -23,6 +23,7 @@
 		
 		<p>
 			<form:input type="hidden" path="user" value = "${user_id}"/>
+			<form:input type="hidden" path="userborrow" value = "${books.userborrow.id}"/>
 		</p>
 		<p>
 			<form:label path="title" style="width: 10%">Title : </form:label>
@@ -42,5 +43,6 @@
 
 		<input type="submit" value="Submit" />
 	</form:form>
+	<a class = "btn btn-danger" href="/books/${books.id }/delete"> Delete Book</a>
 </body>
 </html>
