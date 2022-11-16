@@ -96,9 +96,7 @@ public class HomeController {
 			model.addAttribute("books", books);
 			model.addAttribute("borrowed", borrowed);
 			model.addAttribute("thisUser", thisUser);
-						Book thisBook = bookService.findBook(user_id);
-			
-			
+			Book thisBook = bookService.findBook(user_id);
 			return "Success.jsp";
 		} else {
 			return "redirect:/";
@@ -167,8 +165,8 @@ public class HomeController {
 	}
 
 	@RequestMapping("/book/{id}")
-	public String update2( @PathVariable("id") Long id, @ModelAttribute("books") Book book,
-			HttpSession session ,@RequestParam("userborrow") Long idU) {
+	public String update2(@PathVariable("id") Long id, @ModelAttribute("books") Book book,
+			HttpSession session, @RequestParam("userborrow") Long idU) {
 		Long user_id = (Long) session.getAttribute("user_id");
 		User thisUser = userServ.findUserById(user_id);
 		Book thisBook = bookService.findBook(id);
@@ -176,15 +174,15 @@ public class HomeController {
 		thisBook.setUserborrow(thisUser);
 		userServ.ubdate(thisUser);
 		bookService.updateBook(thisBook);
-		System.out.println(	thisUser.getBorrows());
-		System.out.println(	thisBook.getTitle());
-		System.out.println(	thisBook.getUserborrow());
+		System.out.println(thisUser.getBorrows());
+		System.out.println(thisBook.getTitle());
+		System.out.println(thisBook.getUserborrow());
 		return "redirect:/home";
 
 	}
-	
+
 	@RequestMapping("/book/{id}/return")
-	public String update3( @PathVariable("id") Long id, @ModelAttribute("books") Book book,
+	public String update3(@PathVariable("id") Long id, @ModelAttribute("books") Book book,
 			HttpSession session) {
 		Long user_id = (Long) session.getAttribute("user_id");
 		User thisUser = userServ.findUserById(user_id);
