@@ -2,7 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
@@ -37,7 +36,7 @@
 		
 
 		<c:choose>
-			<c:when test="${thisUser.id==projects.user.id }">
+			<c:when test="${user_id==projects.user.id }">
 				<a class="btn btn-danger" href="/projects/${projects.id }/delete">
 			Delete</a>
 			</c:when>

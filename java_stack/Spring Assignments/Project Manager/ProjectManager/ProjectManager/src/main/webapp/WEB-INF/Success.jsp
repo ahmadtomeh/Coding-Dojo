@@ -48,7 +48,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<br> <br>
+		
 		<p class="container">Your Projects</p>
 		<table class="table table-bordered border border-dark container">
 			<thead>

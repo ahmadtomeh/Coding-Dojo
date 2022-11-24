@@ -2,11 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LoginAndRegistrationApplication",
+            "request": "launch",
+            "mainClass": "com.CodingDojo.LoginAndRegistration.LoginAndRegistrationApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-Reciept1Application<reciept-1>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.reciept1.Reciept1Application",
             "projectName": "reciept-1",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-LanguagesApplication<Languages>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.CodingDojo.Languages.LanguagesApplication",
+            "projectName": "Languages",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

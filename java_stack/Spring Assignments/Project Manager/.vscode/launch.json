@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProjectManagerApplication<LoginAndRegistration>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.CodingDojo.ProjectManager.ProjectManagerApplication",
+            "projectName": "LoginAndRegistration",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
