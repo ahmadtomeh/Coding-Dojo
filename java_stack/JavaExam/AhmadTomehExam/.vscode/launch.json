@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JavaExamApplication<JavaExam>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.CodingDojo.JavaExam.JavaExamApplication",
+            "projectName": "JavaExam",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

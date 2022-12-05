@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch JavaExamApplication",
+            "request": "launch",
+            "mainClass": "com.CodingDojo.JavaExam.JavaExamApplication"
+        },
+        {
+            "type": "java",
             "name": "Launch LoginAndRegistrationApplication",
             "request": "launch",
             "mainClass": "com.CodingDojo.LoginAndRegistration.LoginAndRegistrationApplication"

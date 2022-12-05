@@ -5,5 +5,6 @@
         "hashpw",
         "userid"
     ],
-    "spring.dashboard.enableGutter": "auto"
+    "spring.dashboard.enableGutter": "auto",
+    "java.compile.nullAnalysis.mode": "automatic"
 }
