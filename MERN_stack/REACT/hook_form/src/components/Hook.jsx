@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const Hook = (props) => {
+const Hook = () => {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLaststname] = useState("");
     const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ const Hook = (props) => {
             <form onSubmit={createUser}>
                 <div>
                     <label>First name: </label>
-                    <input type="text" onChange={(e) => setFirstname(e.target.value)} />
+                    <input type="text" onChange={(e) => {setFirstname(e.target.value);console.log(e)} }/>
                 </div>
                 <div>
                     <label>Last name: </label>
