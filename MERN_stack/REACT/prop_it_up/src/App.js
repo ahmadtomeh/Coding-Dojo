@@ -13,14 +13,14 @@ function App() {
   return (
     <div className="App">
       {member.map(person => {
-        return <PropItUp
-          key={person.id}
-          firstName={person.firstName}
-          lastName={person.lastName}
-          age={person.age}
-          hairColor={person.hairColor} />
-      }
-      )
+        return <PropItUp 
+        key={person.id}
+        firstName={person.firstName}
+        lastName={person.lastName}
+        age={person.age}
+        hairColor={person.hairColor} />
+      })
+
       }
     </div>
   );
