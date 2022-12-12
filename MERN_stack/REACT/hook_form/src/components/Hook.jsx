@@ -21,9 +21,9 @@ const Hook = () => {
     const handleFirstname = (e) => {
         setFirstname(e.target.value);
         if(e.target.value.length < 1) {
-            setFirstnameError("Title is required!");
+            setFirstnameError("");
         } else if(e.target.value.length < 2) {
-            setFirstnameError("Title must be 2 characters or longer!");
+            setFirstnameError("Firstname must be 2 characters or longer!");
         } else {
             setFirstnameError("");
         }
@@ -32,9 +32,9 @@ const Hook = () => {
     const handleLaststname = (e) => {
         setLaststname(e.target.value);
         if(e.target.value.length < 1) {
-            setLaststnameError("Title is required!");
+            setLaststnameError("");
         } else if(e.target.value.length < 2) {
-            setLaststnameError("Title must be 2 characters or longer!");
+            setLaststnameError("Laststname must be 2 characters or longer!");
         } else {
             setLaststnameError("");
         }
@@ -43,9 +43,9 @@ const Hook = () => {
     const handleEmail = (e) => {
         setEmail(e.target.value);
         if(e.target.value.length < 1) {
-            setEmailError("Title is required!");
+            setEmailError("");
         } else if(e.target.value.length < 2) {
-            setEmailError("Title must be 2 characters or longer!");
+            setEmailError("Email must be 2 characters or longer!");
         } else {
             setEmailError("");
         }
@@ -54,9 +54,9 @@ const Hook = () => {
     const handlePassword = (e) => {
         setPassword(e.target.value);
         if(e.target.value.length < 1) {
-            setPasswordError("Title is required!");
+            setPasswordError("");
         } else if(e.target.value.length < 8) {
-            setPasswordError("Title must be 8 characters or longer!");
+            setPasswordError("Password must be 8 characters or longer!");
         } else {
             setPasswordError("");
         }
@@ -65,9 +65,9 @@ const Hook = () => {
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
         if(e.target.value.length < 1) {
-            setConfirmPasswordError("Title is required!");
+            setConfirmPasswordError("");
         } else if(e.target.value.length < 8) {
-            setConfirmPasswordError("Title must be 8 characters or longer!");
+            setConfirmPasswordError("ConfirmPassword must be 8 characters or longer!");
         } else {
             setConfirmPasswordError("");
         }
