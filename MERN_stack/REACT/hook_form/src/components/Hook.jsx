@@ -7,35 +7,118 @@ const Hook = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [ConfirmPassword, setConfirmPassword] = useState("");
+    const [FirstnameError, setFirstnameError] = useState("");
+    const [LaststnameError, setLaststnameError] = useState("");
+    const [EmailError, setEmailError] = useState("");
+    const [PasswordError, setPasswordError] = useState("");
+    const [ConfirmPasswordError, setConfirmPasswordError] = useState("");
 
     const createUser = (e) => {
         e.preventDefault();
         const newUser = { firstname, lastname, email, password, ConfirmPassword };
         console.log("Welcome", newUser);
     };
+    const handleFirstname = (e) => {
+        setFirstname(e.target.value);
+        if(e.target.value.length < 1) {
+            setFirstnameError("Title is required!");
+        } else if(e.target.value.length < 2) {
+            setFirstnameError("Title must be 2 characters or longer!");
+        } else {
+            setFirstnameError("");
+        }
+    }
 
+    const handleLaststname = (e) => {
+        setLaststname(e.target.value);
+        if(e.target.value.length < 1) {
+            setLaststnameError("Title is required!");
+        } else if(e.target.value.length < 2) {
+            setLaststnameError("Title must be 2 characters or longer!");
+        } else {
+            setLaststnameError("");
+        }
+    }
+    
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+        if(e.target.value.length < 1) {
+            setEmailError("Title is required!");
+        } else if(e.target.value.length < 2) {
+            setEmailError("Title must be 2 characters or longer!");
+        } else {
+            setEmailError("");
+        }
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+        if(e.target.value.length < 1) {
+            setPasswordError("Title is required!");
+        } else if(e.target.value.length < 8) {
+            setPasswordError("Title must be 8 characters or longer!");
+        } else {
+            setPasswordError("");
+        }
+    }
+
+    const handleConfirmPassword = (e) => {
+        setConfirmPassword(e.target.value);
+        if(e.target.value.length < 1) {
+            setConfirmPasswordError("Title is required!");
+        } else if(e.target.value.length < 8) {
+            setConfirmPasswordError("Title must be 8 characters or longer!");
+        } else {
+            setConfirmPasswordError("");
+        }
+    }
     return (
         <>
             <form onSubmit={createUser}>
                 <div>
                     <label>First name: </label>
-                    <input type="text" onChange={(e) => {setFirstname(e.target.value);console.log(e)} }/>
+                    <input type="text" onChange={handleFirstname}/>
+                    {
+                    FirstnameError ?
+                    <p style={{color:'red'}}>{ FirstnameError }</p> :
+                    ''
+                }
                 </div>
                 <div>
                     <label>Last name: </label>
-                    <input type="text" onChange={(e) => setLaststname(e.target.value)} />
+                    <input type="text" onChange={handleLaststname} />
+                    {
+                    LaststnameError ?
+                    <p style={{color:'red'}}>{ LaststnameError }</p> :
+                    ''
+                }
                 </div>
                 <div>
                     <label>Email Address: </label>
-                    <input type="text" onChange={(e) => setEmail(e.target.value)} />
+                    <input type="text" onChange={handleEmail} />
+                    {
+                    EmailError ?
+                    <p style={{color:'red'}}>{ EmailError }</p> :
+                    ''
+                }
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" onChange={handlePassword} />
+                    {
+                    PasswordError ?
+                    <p style={{color:'red'}}>{ PasswordError }</p> :
+                    ''
+                }
                 </div>
                 <div>
                     <label>Confirm Password: </label>
-                    <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <input type="password" onChange={handleConfirmPassword} />
+                    {
+                    ConfirmPasswordError ?
+                    <p style={{color:'red'}}>{ ConfirmPasswordError }</p> :
+                    ''
+                }
                 </div>
                 <input type="submit" value="Create User" />
             </form>
