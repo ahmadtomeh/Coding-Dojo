@@ -6,10 +6,9 @@ const AddBox = (props) => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        setBox([...box, { 'color': color }])
+        setBox([ { 'color': color },...box])
         setColor("")
-        props.onNewBox( [...box, { 'color': color }] );
-        
+        props.onNewBox( [ { 'color': color },...box])
     };
     return (
         <div>
