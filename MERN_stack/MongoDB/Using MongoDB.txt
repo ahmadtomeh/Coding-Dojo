@@ -1,0 +1,40 @@
+use my_first_db
+
+db.createCollection("students")
+
+db.students.insert({name: "Haneen",home_sate:"Ramallah",lucky_number: 8,birthday:{month: 9, day: 26, year:1999}})
+db.students.insert({name: "Thabet",home_sate:"Tulkarem",lucky_number: 0,birthday:{month: 2, day: 8, year:1998}})
+db.students.insert({name: "ra'd",home_sate:"Tulkarem",lucky_number: 2,birthday:{month: 4, day: 7, year:1998}})
+db.students.insert({name: "Laith",home_sate:"Nablus",lucky_number: 5,birthday:{month: 9, day: 8, year:1999}})
+db.students.insert({name: "Marah",home_sate:"Tulkarem",lucky_number: 9,birthday:{month: 1, day: 2, year:1998}})
+
+db.students.find().pretty()
+
+db.students.find({home_sate: "Tulkarem"}).pretty()
+db.students.find({home_sate: "Ramallah"}).pretty()
+
+db.students.find({lucky_number: {$gt: 5}})
+
+db.students.find({lucky_number: {$lte: 8}})
+
+db.students.find({$and:[{lucky_number:{$gt:1}},{lucky_number:{$lt:10}}]}).pretty()
+
+db.students.updateMany({}, {$set: {interests: ['coding', 'brunch', 'MongoDB']}})
+
+db.students.update({name: "Haneen"}, {$push: {interests: "java"}})
+db.students.update({name: "Thabet"}, {$push: {interests: "java"}})
+db.students.update({name: "ra'd"}, {$push: {interests: "java"}})
+db.students.update({name: "Lith"}, {$push: {interests: "java"}})
+db.students.update({name: "Marah"}, {$push: {interests: "java"}})
+
+db.students.update({name: "Haneen"}, {$push: { interests:"taxes"}})
+
+db.students.update({name: "Haneen"}, {$pull: { interests:"taxes"}})
+
+db.students.remove({home_sate:"Tulkarem"})
+
+db.students.remove({name:'Laith'})
+
+db.students.remove({luky_number:{$gte:1}})
+
+db.students.updateMany({},{ $rename: { number_of_belts:"belts_earned"}})

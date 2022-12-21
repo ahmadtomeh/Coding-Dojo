@@ -20,16 +20,16 @@ const createUSER = () => {
 
 
 const createCompany = () => {
-    const newFakeCompny = {
+    const newFakeCompany = {
         id: faker.datatype.uuid(),
         name: faker.company.name(),
-        streat: faker.address.street(),
+        street: faker.address.street(),
         country: faker.address.country(),
         city: faker.address.city(),
         state: faker.address.state(),
         zipcode: faker.address.zipCode()
     };
-    return newFakeCompny;
+    return newFakeCompany;
 };
 
 
