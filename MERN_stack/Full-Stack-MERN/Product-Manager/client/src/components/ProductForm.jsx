@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { navigate } from '@reach/router';
 export default () => {
     //keep track of what is being typed via useState hook
     const [title, setTitle] = useState(""); 
